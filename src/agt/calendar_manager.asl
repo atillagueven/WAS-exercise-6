@@ -25,12 +25,10 @@ td("https://was-course.interactions.ics.unisg.ch/wake-up-ontology#CalendarServic
 
 @read_upcoming_event_plan
 +!read_upcoming_event : true <-
-    // performs an action that exploits the TD Property Affordance of type was:ReadUpcomingEvent 
-    // the action unifies UpcomingEventLst with a list holding the owner's state, e.g. ["asleep"]
     readProperty("https://was-course.interactions.ics.unisg.ch/wake-up-ontology#ReadUpcomingEvent",  UpcomingEventLst);
-    .nth(0,UpcomingEventLst,UpcomingEvent); // performs an action that unifies UpcomingEvent with the element of the list OwnerStateLst at index 0
-    -+upcoming_event(UpcomingEvent); // updates the beleif owner_state 
-    .send(personal_assistant, tell, upcoming_event(UpcomingEvent)). // creates the goal !read_owner_state
+    .nth(0,UpcomingEventLst,UpcomingEvent); 
+    -+upcoming_event(UpcomingEvent);
+    .send(personal_assistant, tell, upcoming_event(UpcomingEvent)).
 
 @upcoming_event_plan
 +upcoming_event(UpcomingEvent) : true <-
