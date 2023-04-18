@@ -13,3 +13,18 @@ mas wake_up_mas {
     agent lights_controller
 
 }
+
+
+
+/*
+
+agent social_media_master
+
+agent bob: weather_man_bob.asl {
+  join: my_workspace
+  focus: my_workspace.dweet
+}
+
+thingArtifacts already supplied by library
+
+*/
